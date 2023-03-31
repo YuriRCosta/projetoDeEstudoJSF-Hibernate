@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui = "http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+	<title>Lancamento</title>
+	<style>
+	body , .menu, .dropdown-toggle, .dropdown-menu {
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M37.65 -27.59L102.6 9.91L102.6 84.91L37.65 122.41L-27.3 84.91L-27.3 9.91zM102.6 84.91L167.56 122.41L167.56 197.41L102.6 234.91L37.65 197.41L37.65 122.41zM102.6 309.91L167.56 347.41L167.56 422.41L102.6 459.91L37.65 422.41L37.65 347.41zM37.65 422.41L102.6 459.91L102.6 534.91L37.65 572.41L-27.3 534.91L-27.3 459.91zM102.6 534.91L167.56 572.41L167.56 647.41L102.6 684.91L37.65 647.41L37.65 572.41zM167.56 -27.59L232.51 9.91L232.51 84.91L167.56 122.41L102.6 84.91L102.6 9.91zM232.51 84.91L297.46 122.41L297.46 197.41L232.51 234.91L167.56 197.41L167.56 122.41zM232.51 309.91L297.46 347.41L297.46 422.41L232.51 459.91L167.56 422.41L167.56 347.41zM167.56 422.41L232.51 459.91L232.51 534.91L167.56 572.41L102.6 534.91L102.6 459.91zM232.51 534.91L297.46 572.41L297.46 647.41L232.51 684.91L167.56 647.41L167.56 572.41zM297.46 197.41L362.42 234.91L362.42 309.91L297.46 347.41L232.51 309.91L232.51 234.91zM297.46 422.41L362.42 459.91L362.42 534.91L297.46 572.41L232.51 534.91L232.51 459.91zM362.42 534.91L427.37 572.41L427.37 647.41L362.42 684.91L297.46 647.41L297.46 572.41zM492.33 84.91L557.28 122.41L557.28 197.41L492.33 234.91L427.37 197.41L427.37 122.41zM427.37 197.41L492.33 234.91L492.33 309.91L427.37 347.41L362.42 309.91L362.42 234.91zM492.33 534.91L557.28 572.41L557.28 647.41L492.33 684.91L427.37 647.41L427.37 572.41zM557.28 -27.59L622.23 9.91L622.23 84.91L557.28 122.41L492.33 84.91L492.33 9.91zM557.28 197.41L622.23 234.91L622.23 309.91L557.28 347.41L492.33 309.91L492.33 234.91zM622.23 309.91L687.19 347.41L687.19 422.41L622.23 459.91L557.28 422.41L557.28 347.41zM557.28 422.41L622.23 459.91L622.23 534.91L557.28 572.41L492.33 534.91L492.33 459.91zM687.19 -27.59L752.14 9.91L752.14 84.91L687.19 122.41L622.23 84.91L622.23 9.91zM752.14 84.91L817.1 122.41L817.1 197.41L752.14 234.91L687.19 197.41L687.19 122.41zM752.14 309.91L817.1 347.41L817.1 422.41L752.14 459.91L687.19 422.41L687.19 347.41zM687.19 422.41L752.14 459.91L752.14 534.91L687.19 572.41L622.23 534.91L622.23 459.91zM752.14 534.91L817.1 572.41L817.1 647.41L752.14 684.91L687.19 647.41L687.19 572.41zM817.09 -27.59L882.05 9.91L882.05 84.91L817.09 122.41L752.14 84.91L752.14 9.91zM882.05 84.91L947 122.41L947 197.41L882.05 234.91L817.09 197.41L817.09 122.41zM882.05 309.91L947 347.41L947 422.41L882.05 459.91L817.09 422.41L817.09 347.41zM1011.96 84.91L1076.91 122.41L1076.91 197.41L1011.96 234.91L947 197.41L947 122.41zM947 197.41L1011.96 234.91L1011.96 309.91L947 347.41L882.05 309.91L882.05 234.91zM1011.96 534.91L1076.91 572.41L1076.91 647.41L1011.96 684.91L947 647.41L947 572.41zM1141.86 309.91L1206.82 347.41L1206.82 422.41L1141.86 459.91L1076.91 422.41L1076.91 347.41zM1076.91 422.41L1141.86 459.91L1141.86 534.91L1076.91 572.41L1011.96 534.91L1011.96 459.91zM1141.86 534.91L1206.82 572.41L1206.82 647.41L1141.86 684.91L1076.91 647.41L1076.91 572.41zM1206.82 -27.59L1271.77 9.91L1271.77 84.91L1206.82 122.41L1141.86 84.91L1141.86 9.91zM1271.77 309.91L1336.72 347.41L1336.72 422.41L1271.77 459.91L1206.82 422.41L1206.82 347.41zM1206.82 422.41L1271.77 459.91L1271.77 534.91L1206.82 572.41L1141.86 534.91L1141.86 459.91zM1336.73 -27.59L1401.68 9.91L1401.68 84.91L1336.73 122.41L1271.77 84.91L1271.77 9.91zM1401.68 84.91L1466.63 122.41L1466.63 197.41L1401.68 234.91L1336.73 197.41L1336.73 122.41zM1466.63 -27.59L1531.59 9.91L1531.59 84.91L1466.63 122.41L1401.68 84.91L1401.68 9.91zM1466.63 422.41L1531.59 459.91L1531.59 534.91L1466.63 572.41L1401.68 534.91L1401.68 459.91z' stroke='%2303305d' stroke-width='2'%3e%3c/path%3e%3cpath d='M30.15 -27.59 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM95.1 9.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM95.1 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM30.15 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM-34.8 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM-34.8 9.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM160.06 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM160.06 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM95.1 234.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM30.15 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM95.1 309.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM160.06 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM160.06 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM95.1 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM30.15 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM30.15 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM95.1 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM30.15 572.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM-34.8 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM-34.8 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM160.06 572.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM160.06 647.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM95.1 684.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM30.15 647.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM160.06 -27.59 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM225.01 9.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM225.01 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM289.96 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM289.96 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM225.01 234.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM225.01 309.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM289.96 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM289.96 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM225.01 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM225.01 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM289.96 572.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM289.96 647.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM225.01 684.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM354.92 234.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM354.92 309.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM354.92 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM354.92 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM419.87 572.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM419.87 647.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM354.92 684.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM484.83 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM549.78 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM549.78 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM484.83 234.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM419.87 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM419.87 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM484.83 309.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM419.87 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM484.83 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM549.78 572.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM549.78 647.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM484.83 684.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM549.78 -27.59 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM614.73 9.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM614.73 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM484.83 9.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM614.73 234.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM614.73 309.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM549.78 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM679.69 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM679.69 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM614.73 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM549.78 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM614.73 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM484.83 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM679.69 -27.59 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM744.64 9.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM744.64 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM679.69 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM809.6 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM809.6 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM744.64 234.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM679.69 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM744.64 309.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM809.6 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM809.6 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM744.64 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM744.64 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM679.69 572.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM809.6 572.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM809.6 647.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM744.64 684.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM679.69 647.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM809.59 -27.59 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM874.55 9.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM874.55 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM809.59 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM939.5 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM939.5 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM874.55 234.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM809.59 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM874.55 309.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM939.5 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM939.5 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM874.55 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM809.59 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM809.59 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1004.46 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1069.41 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1069.41 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1004.46 234.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1004.46 309.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1004.46 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1069.41 572.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1069.41 647.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1004.46 684.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM939.5 647.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM939.5 572.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1134.36 309.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1199.32 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1199.32 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1134.36 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1069.41 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1069.41 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1134.36 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1004.46 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1199.32 572.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1199.32 647.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1134.36 684.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1199.32 -27.59 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1264.27 9.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1264.27 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1199.32 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1134.36 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1134.36 9.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1264.27 309.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1329.22 347.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1329.22 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1264.27 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1264.27 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1329.23 -27.59 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1394.18 9.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1394.18 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1329.23 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1459.13 122.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1459.13 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1394.18 234.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1329.23 197.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1459.13 -27.59 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1524.09 9.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1524.09 84.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1459.13 422.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1524.09 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1524.09 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1459.13 572.41 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1394.18 534.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1394.18 459.91 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0z' fill='%2303305d'%3e%3c/path%3e%3cpath d='M182.87 124.07L226.17 149.07L226.17 199.07L182.87 224.07L139.57 199.07L139.57 149.07zM269.48 124.07L312.78 149.07L312.78 199.07L269.48 224.07L226.17 199.07L226.17 149.07zM399.38 499.07L442.69 524.07L442.69 574.07L399.38 599.07L356.08 574.07L356.08 524.07zM485.99 49.07L529.29 74.07L529.29 124.07L485.99 149.07L442.69 124.07L442.69 74.07zM572.59 199.07L615.89 224.07L615.89 274.07L572.59 299.07L529.29 274.07L529.29 224.07zM962.32 424.07L1005.62 449.07L1005.62 499.07L962.32 524.07L919.01 499.07L919.01 449.07zM1048.92 124.07L1092.22 149.07L1092.22 199.07L1048.92 224.07L1005.62 199.07L1005.62 149.07zM1265.43 349.07L1308.74 374.07L1308.74 424.07L1265.43 449.07L1222.13 424.07L1222.13 374.07zM1308.74 -25.93L1352.04 -0.93L1352.04 49.07L1308.74 74.07L1265.43 49.07L1265.43 -0.93zM1352.04 49.07L1395.34 74.07L1395.34 124.07L1352.04 149.07L1308.74 124.07L1308.74 74.07zM1308.74 124.07L1352.04 149.07L1352.04 199.07L1308.74 224.07L1265.43 199.07L1265.43 149.07zM1395.34 -25.93L1438.64 -0.93L1438.64 49.07L1395.34 74.07L1352.04 49.07L1352.04 -0.93zM1395.34 424.07L1438.64 449.07L1438.64 499.07L1395.34 524.07L1352.04 499.07L1352.04 449.07z' stroke='rgba(6%2c 80%2c 156%2c 0.93)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+	}
+	</style>
+</h:head>
+
+<h:body
+	style="margin: 0px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #FFF;">
+	<ui:include src="/menu.xhtml"></ui:include>
+	<div class="msg"
+		style="position: absolute; top: 80px; width: 100%; display: flex; justify-content: center;">
+		<b:messages autoUpdate="true" style="width: 250px;text-align: center;" />
+	</div>
+	<b:form id="formLancamento"
+		style="display: flex; justify-content: center; align-items: center; flex-direction: row; margin-bottom: 50px; margin-top: 200px">
+		<div>
+			<h:panelGrid>
+				<f:facet name="header">
+					<p style="text-align: center; margin: 0px; font-size: 20px;">Lancamentos</p>
+				</f:facet>
+
+				<h:outputLabel value="ID:" />
+				<b:inputText value="#{launchBean.launch.id}" readonly="true" />
+
+				<h:outputLabel value="Nota:" />
+				<b:inputText value="#{launchBean.launch.numeroNotaFiscal}"
+					required="true" requiredMessage="Informe a nota fiscal" />
+
+				<h:outputLabel value="Empresa de Origem:" />
+				<b:inputText value="#{launchBean.launch.empresaOrigem}"
+					required="true" requiredMessage="Informe a empresa origem" />
+
+				<h:outputLabel value="Empresa de Destino:" />
+				<b:inputText value="#{launchBean.launch.empresaDestino}"
+					required="true" requiredMessage="Informe a empresa destino" />
+
+				<h:outputLabel value="Data inicial" />
+				<b:datepicker locale="en" value="#{launchBean.launch.dataInicial}" required="true"
+					requiredMessage="Informe a data inicial"
+					converterMessage="Data invalida!">
+				</b:datepicker>
+				
+				<h:outputLabel value="Data final" />
+				<b:datepicker locale="en" value="#{launchBean.launch.dataFinal}" required="true"
+					requiredMessage="Informe a data final"
+					converterMessage="Data invalida!">
+				</b:datepicker>
+				
+				</h:panelGrid>
+			<div
+				style="display: flex; justify-content: center; align-items: center; flex-direction: row; margin-top: 15px;">
+				<h:commandButton style="margin: 10px; width: 30px;"
+					image="https://cdn-icons-png.flaticon.com/512/2874/2874091.png"
+					action="#{launchBean.save}" />
+				<h:commandButton style="margin: 10px; margin-left:0px; width: 30px;"
+					image="https://cdn-icons-png.flaticon.com/512/3096/3096673.png"
+					action="#{launchBean.remove}" />
+				<h:commandButton style="margin: 10px; width: 30px;"
+					image="https://cdn-icons-png.flaticon.com/512/992/992651.png"
+					action="#{launchBean.newNotaFiscal}" />
+			</div>
+		</div>
+	</b:form>
+	<b:form style="width: 100%;">
+		<div class="userList">
+			<h:dataTable style="color: #000; width: 100%; background-color: #EEE;"  value="#{launchBean.realeses}" border="3"
+				cellpadding="5" var="launch">
+				<f:facet name="header" >
+					<h:outputText value="Lista de Notas Fiscais" style="display: flex; justify-content: center; align-items: center;"/>
+				</f:facet>
+				<h:column>
+					<f:facet name="header"><p style="text-align: center; margin: 0px">ID</p></f:facet>
+					<h:outputText value="#{launch.id}"  style="display: flex; justify-content: center; align-items: center;"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header"><p style="text-align: center; margin: 0px">Numero Nota Fiscal</p></f:facet>
+					<h:outputText
+						style="display: flex; justify-content: center; align-items: center;"
+						value="#{launch.numeroNotaFiscal}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"><p style="text-align: center; margin: 0px">Emp. Origem</p></f:facet>
+					<h:outputText
+						style="display: flex; justify-content: center; align-items: center;"
+						value="#{launch.empresaOrigem}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"><p style="text-align: center; margin: 0px">Emp. Destino</p></f:facet>
+					<h:outputText
+						style="display: flex; justify-content: center; align-items: center;"
+						value="#{launch.empresaDestino}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"><p style="text-align: center; margin: 0px">Data Inicial</p></f:facet>
+					<h:outputText
+						style="display: flex; justify-content: center; align-items: center;"
+						value="#{launch.dataInicial}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"><p style="text-align: center; margin: 0px">Data Final</p></f:facet>
+					<h:outputText
+						style="display: flex; justify-content: center; align-items: center;"
+						value="#{launch.dataFinal}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header"><p style="text-align: center; margin: 0px">Excluir</p></f:facet>
+					<h:commandLink
+						style="display: flex; justify-content: center; align-items: center;"
+						immediate="true" action="#{launchBean.remove}">
+						<h:graphicImage height="25px" width="25px"
+							value="https://cdn-icons-png.flaticon.com/512/3096/3096673.png" />
+						<f:setPropertyActionListener value="#{launch}"
+							target="#{launchBean.launch}" />
+					</h:commandLink>
+				</h:column>
+			</h:dataTable>
+		</div>
+	</b:form>
+
+</h:body>
+</html>

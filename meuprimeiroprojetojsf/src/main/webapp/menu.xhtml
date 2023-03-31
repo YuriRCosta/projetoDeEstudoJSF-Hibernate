@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui = "http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+	
+	
+
+	
+	<h:form style="position: fixed; z-index: 999;top: 0px; width:100%; text-align: center;">
+		<b:navBar class="menu" style="font-weight: bold; background-color: #002A47;border-radius: 0px;border: none; border-bottom: 2px solid #002A47; box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);">
+			<b:navbarLinks style="width: 100%; display: flex; justify-content: center;">
+				<b:navCommandLink style="color: #ccc; text-transform: uppercase;" action="primeirapagina?faces-redirect=true" value="Administracao" rendered="#{personBean.allowAccess('ADMIN')}"/>
+				<b:navCommandLink style="color: #ccc; text-transform: uppercase;" value="Lançamentos" action="lancamento?faces-redirect=true"/>
+				<b:dropMenu value="Relatorios" style="color: #ccc; text-transform: uppercase;">
+					<b:navCommandLink style="color: #ccc; text-transform: uppercase;" value="Rel. Notas" action="rellancamento?faces-redirect=true"/>
+					<b:navCommandLink style="color: #ccc; text-transform: uppercase;" value="Rel. Usuario" action="relusuario?faces-redirect=true"/>
+				</b:dropMenu>
+				<b:navCommandLink style="color: #ccc; text-transform: uppercase;" value="Sair" action="#{personBean.logout}"/>
+			</b:navbarLinks>
+		</b:navBar>
+	</h:form>
+</html>
