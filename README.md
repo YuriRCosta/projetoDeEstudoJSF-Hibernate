@@ -1,6 +1,7 @@
 Projeto de estudos em Java: JavaEE com JSF, Hibernate, JPA, BootFaces e CDI
 Este projeto foi criado com o objetivo de aprender as principais tecnologias utilizadas em JavaEE, como JSF, Hibernate, JPA, BootFaces e CDI. Foi desenvolvido para rodar em um servidor de aplicação Java, como o WildFly.
 Você também pode ver um pequeno video do funcionamento do projeto no meu LinkedIn!
+
 https://www.linkedin.com/feed/update/urn:li:activity:7047370196327571456/
 
 
