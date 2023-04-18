@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form id="formCadastroDialog" prependId="false">
+		<h:panelGrid columns="3" id="gridAltSenhaDialog">
+			<h:outputLabel style="font-size: 16px;" value="Senha Atual: " id="labelSenhaAtual"/>
+			<p:password style="width: 100px; font-size: 13px;" id="senhaAtualDialog" maxlength="20" required="true" requiredMessage="Informe o campo Senha Atual" inline="senhaAtualDialog" value="#{entidadeBeanView.entidadeAtualizaSenhaBean.senhaAtual}"/>
+			<p:message for="senhaAtualDialog"/>
+			
+			<h:outputLabel style="font-size: 16px;" value="Nova Senha: " id="labelNovaSenha"/>
+			<p:password style="width: 100px; font-size: 13px;" id="novaSenhaDialog" maxlength="20" required="true" requiredMessage="Informe o campo Nova Senha" inline="novaSenhaDialog" value="#{entidadeBeanView.entidadeAtualizaSenhaBean.novaSenha}"/>
+			<p:message for="novaSenhaDialog"/>
+
+			<h:outputLabel style="font-size: 16px;" value="Confirmar Nova Senha: " id="labelConfirmarNovaSenha"/>
+			<p:password style="width: 100px; font-size: 13px;" id="confirmarNovaSenhaDialog" maxlength="20" required="true" requiredMessage="Informe o campo Confirmar Nova Senha" inline="confirmarNovaSenhaDialog" value="#{entidadeBeanView.entidadeAtualizaSenhaBean.confirmaSenha}"/>
+			<p:message for="confirmarNovaSenhaDialog"/>
+		</h:panelGrid>
+		<p:commandButton value="Salvar" id="buttonSalvarNovaSenha" action="#{entidadeBeanView.updateSenha}" process="@this, @form" partialSubmit="true"/>
+	</h:form>
+	
+</html>

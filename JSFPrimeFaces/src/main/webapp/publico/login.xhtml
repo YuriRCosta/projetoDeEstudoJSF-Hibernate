@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name="titulo">Projeto</ui:insert></title>
+
+	<h:outputScript name="jquery.js" library="primefaces/jquery" />
+	<h:outputStylesheet name="loginPage.css" library="css" />
+	<h:outputScript name="script.js" library="javascript" />
+
+</h:head>
+<h:body>
+	<div class="msg">
+		<p:growl autoUpdate="true" closable="true" />
+	</div>
+
+	<h:panelGroup rendered="#{!empty param.login_error}">
+		<h:outputLabel class="msg"
+			rendered="#{SPRING_SECURITY_LAST_EXCEPTION.message == 'Bad credentials'}">
+			<div class="alert warning-alert">
+				<h3>Login ou senha incorreto.</h3>
+				<a class="close">&times;</a>
+			</div>
+		</h:outputLabel>
+		<h:outputLabel
+			rendered="#{SPRING_SECURITY_LAST_EXCEPTION.message == 'Maximum sessions of 1 for this principal exceeded'}">
+			<div class="alert warning-alert">
+				<h3>Voce esta logado em outra sessao.</h3>
+				<a class="close">&times;</a>
+			</div>
+			<h:commandButton
+				onclick="invalidateSession('#{request.contextPath}', '/publico/invalidateSession')"
+				value="Encerrar" />
+		</h:outputLabel>
+	</h:panelGroup>
+
+	<div class="container">
+		<form name="formulario" id="formulario" method="post"
+			onsubmit="return validarSenhaLogin()"
+			action="#{request.contextPath}/j_spring_security_check">
+			<h1>Login</h1>
+
+			<h:outputLabel value="Usuario:" />
+			<h:inputText name="j_username" styleClass="campoLogin"
+				id="j_username" />
+
+			<h:outputLabel value="Senha:" />
+			<h:inputSecret name="j_password" id="j_password" />
+
+			<h:commandButton id="buttonLogin" class="button" value="Acessar"
+				action="#{personBean.logIn}" />
+			<p>
+				Não tem uma conta? <a href="#">Cadastre-se</a>
+			</p>
+		</form>
+	</div>
+
+	<script>
+		$(".close").click(function() {
+			$(this).parent(".alert").fadeOut();
+		});
+
+		$("#j_username").focus();
+	</script>
+
+</h:body>
+</html>

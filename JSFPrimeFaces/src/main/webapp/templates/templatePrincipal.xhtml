@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:p="http://primefaces.org/ui">
+
+<sec:isAuthenticated>
+
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title><ui:insert name="titulo">Projeto</ui:insert></title>
+		<h:outputScript name="primefaces.js" library="primefaces" id="jsPrime" />
+		<h:outputScript name="jquery.js" library="primefaces/jquery"
+			id="jsJquery" />
+		<h:outputScript name="jquery-plugins.js" library="primefaces/jquery"
+			id="jsJqueryPlugin" />
+		<h:outputScript name="jquery.cookie.js" library="javascript"
+			id="jsJaqueryCookie" />
+		<h:outputStylesheet name="jquery-ui.css"
+			library="primefaces/jquery/ui" id="jsJqueryUi" />
+		<h:outputStylesheet name="primefaces.css" library="primefaces"
+			id="jdPrimeCss" />
+		<h:outputScript name="jquery.maskMoney.min.js" library="javascript"
+			id="jsMaskMoneySistema" />
+		<h:outputScript name="jquery.maskedinput.js" library="javascript"
+			id="jsMaskInputSistema" />
+		<h:outputScript name="script.js" library="javascript"
+			id="jsScriptSistema" />
+		<h:outputScript name="jsf.js" library="javax.faces" />
+		<h:outputScript name="googlechart.js" library="javascript" />
+		<h:outputScript name="deployJava.js" library="javascript" />
+	</h:head>
+	<h:form id="formTemplate" prependId="false">
+		<h:outputStylesheet name="templateHeader.css" library="css"
+			id="cssStyleSistema" />
+		<h:body>
+			<script type="text/javascript" charset="UTF-8">
+				$.noConflict();
+				localeData_pt_br();
+				$(document).keydown(function(e) {
+					if (e.which == 116) {
+						return 116;
+					}
+				});
+			</script>
+
+
+			<ui:include src="/templates/barraProgresso.xhtml" />
+			<div id="msgError">
+				<p:growl id="msg" showDetail="false" sticky="true" redisplay="true"
+					autoUpdate="true" life="5000" />
+				<p:tooltip id="toolTipFocus" globalSelector="a, :input, :button"
+					showEvent="focus" hideEvent="blur" />
+
+				<div id="container">
+					<details> <summary></summary> <nav class="menu"> <p:tieredMenu>
+					<p:menuitem value="Inicio" id="menuInicio" immediate="true"
+							action="/restrito/principal.jsf?faces-redirect=true" />
+						<sec:ifAnyGranted roles="CADASTRO_ACESSAR, ADMIN">
+							<p:submenu label="Cadastros" id="subMenuCadastro">
+								<sec:ifAnyGranted roles="CIDADE_ACESSAR, ADMIN">
+									<p:menuitem immediate="true" value="Cidade" id="menuCidade"
+										action="#{cidadeBeanView.redirecionarNewEntidade}" />
+								</sec:ifAnyGranted>
+								<sec:ifAnyGranted roles="FUNCIONARIO_ACESSAR, ADMIN">
+									<p:menuitem immediate="true" value="Funcionario" id="menuFuncionario"
+										action="#{funcionarioBeanView.redirecionarNewEntidade}" />
+								</sec:ifAnyGranted>
+								<sec:ifAnyGranted roles="TITULO_ACESSAR, ADMIN">
+									<p:menuitem immediate="true" value="Titulo" id="menuTitulo"
+										action="#{tituloBeanView.redirecionarNewEntidade}" />
+								</sec:ifAnyGranted>
+							</p:submenu>
+						</sec:ifAnyGranted>
+						<p:submenu label="Pesquisar" id="subMenuPesquisar">
+							<p:menuitem immediate="true" value="Cidade"
+								id="menuPesquisarCidade"
+								action="#{cidadeBeanView.redirecionarFindEntidade}" />
+							<p:menuitem immediate="true" value="Funcionario"
+								id="menuPesquisarFuncionario"
+								action="#{funcionarioBeanView.redirecionarFindEntidade}" />
+							<p:menuitem immediate="true" value="Titulo"
+								id="menuPesquisarTitulo"
+								action="#{tituloBeanView.redirecionarFindEntidade}" />
+						</p:submenu>
+						<p:menuitem actionListener="#{mensagemBeanView.novo}" onsuccess="enviarMsgDialog.show()" value="Mensagens" immediate="true" id="enviarMensagem" process="@this" ajax="true">
+						</p:menuitem>
+						<p:menuitem value="Alterar Senha"
+							onclick="alterarSenhaDialog.show()" />
+						<p:menuitem value="Sair"
+							onclick="javascript:logout('#{request.contextPath}')" />
+					</p:tieredMenu> </nav> </details>
+				</div>
+				<div id="corpo" class="corpo">
+					<ui:insert name="corpo" />
+				</div>
+			</div>
+
+			<p:dialog draggable="false" widgetVar="enviarMsgDialog"
+				id="alterarMsgDialog" width="690" modal="true" resizable="false"
+				height="450" header="Enviar menssagem" appendToBody="false"
+				dynamic="true">
+				<ui:include src="/cadastro/dialog_enviar_msg.xhtml"/>
+			</p:dialog>
+
+			<p:dialog draggable="false" widgetVar="alterarSenhaDialog"
+				id="alterarSenhaDialog" width="300" modal="true" resizable="false"
+				height="170" header="Alterar Senha" dynamic="true"
+				appendToBody="false">
+				<ui:include src="/cadastro/dialog_alterar_senha.xhtml"/>
+			</p:dialog>
+			<script type="text/javascript" charset="UTF-8">
+				carregarIdElementosPagina();
+			</script>
+		</h:body>
+	</h:form>
+</sec:isAuthenticated>
+
+</html>

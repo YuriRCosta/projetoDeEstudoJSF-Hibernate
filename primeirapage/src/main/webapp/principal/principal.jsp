@@ -24,7 +24,7 @@
                       <!-- Page-header start -->
                       <jsp:include page="page-header.jsp"></jsp:include>
                       <!-- Page-header end -->
-                        <div class="pcoded-inner-content">
+                        <div class="pcoded-inner-content" >
                             <!-- Main-body start -->
                             <div class="main-body">
                                 <div class="page-wrapper">

@@ -13,7 +13,7 @@
 		body {
 			margin: 0;
 			padding: 0;
-			background: url("https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=1380&t=st=1677544623~exp=1677545223~hmac=3b6c18771ecc297e930f051a67931d5742f014a338d3033a2bf8b33ebbd29dc9") no-repeat center center fixed;
+			background: url("https://cdn.discordapp.com/attachments/1088577939211292765/1088659527555092531/n0xzerazada_modern_background_image_theme_blue_with_some_detail_73a8ede5-71f9-4832-94d0-1c1f6209531c.png") no-repeat center center fixed;
 			background-size: cover;
 			font-family: sans-serif;
 		}
@@ -21,8 +21,10 @@
 		.container {
 			width: 400px;
 			margin: 0 auto;
-			margin-top: 80px;
-			background-color: #fff;
+			margin-top: 150px;
+			background:rgba(0,0,0,0.4);
+			color: white;
+		    backdrop-filter: blur(6px);
 			padding: 30px;
 			border-radius: 8px;
 			box-shadow: 0 0 20px rgba(0,0,0,0.3);
@@ -36,7 +38,7 @@
 			font-weight: bold;
 			margin-bottom: 30px;
 			text-align: center;
-			color: #343a40;
+			color: #FFF;
 			text-transform: uppercase;
 			letter-spacing: 1px;
 		}
@@ -47,6 +49,7 @@
 			margin: 10px 0;
 			display: inline-block;
 			border: none;
+			border-radius: 5px;
 			border-bottom: 2px solid #eee;
 			background-color: #f8f9fa;
 			font-size: 1rem;
@@ -65,7 +68,7 @@
 			padding: 12px 20px;
 			margin-top: 30px;
 			border: none;
-			border-radius: 4px;
+			border-radius: 5px;
 			cursor: pointer;
 			width: 100%;
 			font-size: 1.1rem;
@@ -83,7 +86,7 @@
 			font-size: 0.9rem;
 			text-align: center;
 			margin-top: 20px;
-			color: #495057;
+			color: #FFF;
 		}
 		
 		.container a {

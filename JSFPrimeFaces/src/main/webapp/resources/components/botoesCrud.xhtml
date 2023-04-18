@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface name="botoesCrud">
+	<composite:attribute name="managedBeanView" required="true" />
+	<composite:attribute name="botaoNovo" required="false" default="true" />
+	<composite:attribute name="camposReload" required="false" />
+	<composite:attribute name="botaoSalvar" required="false" default="true" />
+	<composite:attribute name="botaoExcluir" required="false" default="true" />
+</composite:interface>
+
+
+<composite:implementation>
+	<p:commandButton update="#{cc.attrs.camposReload}" value="Novo"
+		rendered="#{cc.attrs.botaoNovo}" id="botaoNovo" immediate="true"
+		action="#{cc.attrs.managedBeanView.novo}" />
+	<p:commandButton immediate="false" update="#{cc.attrs.camposReload}"
+		value="Salvar" rendered="#{cc.attrs.botaoSalvar}" id="botaoSalvar"
+		actionListener="#{cc.attrs.managedBeanView.saveNotReturn}"
+		ajax="false" partialSubmit="true" process="@this, @form" />
+	<p:commandButton immediate="false" update="#{cc.attrs.camposReload}"
+		value="Atualizar" rendered="#{cc.attrs.botaoAtualizar}" id="botaoAtualizar"
+		actionListener="#{cc.attrs.managedBeanView.saveEdit}"
+		ajax="false" partialSubmit="true" process="@this, @form" />
+	<p:commandButton immediate="false" update="#{cc.attrs.camposReload}"
+		value="Excluir" rendered="#{cc.attrs.botaoExcluir}" id="botaoExcluir"
+		actionListener="#{cc.attrs.managedBeanView.excluir}"
+		ajax="false" process="@this, @form" />
+
+</composite:implementation>
+
+</html>

@@ -1,0 +1,158 @@
+:root {
+  --primColor: #dcdcdc;
+  --secoColor: #555555;
+  --cornerRad: 4px;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background-color: #555555;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23555555' cx='50' cy='0' r='50'/%3E%3Cg fill='%23515151' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%234e4e4e' cx='50' cy='100' r='50'/%3E%3Cg fill='%234a4a4a' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23464646' cx='50' cy='200' r='50'/%3E%3Cg fill='%23434343' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%233f3f3f' cx='50' cy='300' r='50'/%3E%3Cg fill='%233c3c3c' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23383838' cx='50' cy='400' r='50'/%3E%3Cg fill='%23353535' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23323232' cx='50' cy='500' r='50'/%3E%3Cg fill='%232e2e2e' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%232b2b2b' cx='50' cy='600' r='50'/%3E%3Cg fill='%23282828' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23242424' cx='50' cy='700' r='50'/%3E%3Cg fill='%23212121' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%231e1e1e' cx='50' cy='800' r='50'/%3E%3Cg fill='%231b1b1b' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23181818' cx='50' cy='900' r='50'/%3E%3Cg fill='%23151515' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23111111' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	background-size: contain;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;	
+  height: 90%;
+}
+.corpo{
+	margin:40px;
+	height: 80vh;
+}
+
+details {
+  margin: 40px;
+}
+summary {
+  writing-mode: vertical-lr;
+  text-align: center;
+  padding: 12px 10px;
+  width: 23px;
+  height: 17px;
+  background-color: var(--primColor);
+  border: 2px solid var(--secoColor);
+  border-radius: var(--cornerRad);
+  color: var(--secoColor);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: transform 200ms ease-in-out 0s;
+}
+summary::before,
+summary::after {
+  position: static;
+  top: 0;
+  left: 0;
+}
+summary::before {
+  content: "";
+}
+summary::after {
+  content: "III";
+  letter-spacing: -1px;
+}
+summary:hover {
+  transform: scale(1.1);
+}
+summary::marker {
+  font-size: 0;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .menu {
+  animation-name: menuAnim;
+}
+details[open] summary::before {
+  content: "X";
+}
+details[open] summary::after {
+  content: "";
+}
+
+.ui-tieredmenu, .ui-tieredmenu li {
+	background: var(--primColor);
+}
+
+.ui-menuitem-active, .ui-state-hover {
+	background: var(--primColor);
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+	background: var(--primColor);
+}
+
+.menu {
+	z-index: 999;
+	font-size: 15px;
+	position:absolute;
+  width: fit-content;
+  border-radius: var(--cornerRad);
+  background-color: var(--primColor);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  animation: closeMenu 300ms ease-in-out forwards;
+}
+
+.ui-menu .ui-menu-parent .ui-menu-child {
+	background: var(--primColor);
+}
+
+.ui-button {
+	margin: 5px;
+}
+
+svg {
+	width: 1780px;
+}
+
+li a {
+	width: 100%;
+}
+
+#formCadastroDialog .ui-button {
+	font-size: 15px;
+} 
+
+.ui-datatable td {
+	text-align: center;
+}
+
+
+.menu a {
+	max-width: 180px;
+  padding: 8px 14px;
+  margin: 0 16px;
+  color: var(--secoColor);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: filter 200ms linear 0s;
+}
+.menu a:nth-of-type(1) {
+  padding-top: 10px;
+}
+.menu a:nth-last-of-type(1) {
+  border-bottom: none;
+}
+
+details[open]::before {
+  animation: fadeMe 300ms linear forwards;
+}
+@keyframes menuAnim {
+  0% {
+    height: 0;
+  }
+}
+@keyframes fadeMe {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}

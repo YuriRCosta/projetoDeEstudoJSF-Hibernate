@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/templatePrincipal.xhtml">
+	<ui:define name="corpo">
+		<h:form id="formCadastroTitulo" prependId="false">
+			<c:set var="isCadastro" value="true" scope="view" />
+			<p:panel header="Cadastro de Titulo" id="panelCadastro">
+				<h:panelGrid id="gridTitulo" columns="3">
+
+					<h:outputLabel for="id" value="Codigo: " id="labelId" />
+					<p:inputText disabled="true" id="id" styleClass=""
+						value="#{tituloBeanView.objetoSelecionado.tit_codigo}" />
+					<h:outputLabel />
+
+					<h:outputLabel for="tit_datahora" value="Data *: "
+						id="labelDataTitulo" />
+					<p:inputText disabled="true" id="tit_datahora" styleClass="" value="#{tituloBeanView.objetoSelecionado.tit_datahora}" >
+						<f:convertDateTime dateStyle="full" pattern="dd/MM/yyyy"/>
+					</p:inputText> 
+					<p:message for="tit_datahora" />
+					
+					<h:outputLabel for="autoCompletePagador" value="Pagador *: "
+						id="labelPagador" />
+					<p:autoComplete converter="entidadeConverter" value="#{tituloBeanView.objetoSelecionado.ent_codigo}" var="ent" itemValue="#{ent}" itemLabel="#{ent.ent_nomefantasia}" id="autoCompletePagador" minQueryLength="4" queryDelay="1500" completeMethod="#{tituloBeanView.pesquisarPagador}">
+					
+					</p:autoComplete>
+					<p:message for="autoCompletePagador" />
+					
+					<h:outputLabel for="tit_origem" value="Tipo *: "
+						id="labelTipoEntidade" />
+					<p:selectOneMenu style="width: 302px;" value="#{tituloBeanView.objetoSelecionado.tit_origem}" id="tit_origem">
+						<f:selectItem itemValue="COMISSAO" itemLabel="Comissao"/>
+						<f:selectItem itemValue="ORIGEM" itemLabel="Origem"/>
+					</p:selectOneMenu>						
+					<p:message for="tit_origem" />
+					
+					<h:outputLabel for="tit_tipo" value="Tipo *: "
+						id="labelTipoTitulo" />
+					<p:selectOneMenu style="width: 302px;" value="#{tituloBeanView.objetoSelecionado.tit_tipo}" id="tit_tipo">
+						<f:selectItem itemValue="RECEBER" itemLabel="Receber"/>
+						<f:selectItem itemValue="PAGAR" itemLabel="Pagar"/>
+					</p:selectOneMenu>						
+					<p:message for="tit_tipo" />
+					
+					<h:outputLabel for="tit_valor" value="Valor R$ *: "
+						id="labelEmailConsultaFuncionario" />
+					<p:inputText id="tit_valor" styleClass="" required="true"
+						value="#{tituloBeanView.objetoSelecionado.tit_valor}"
+						maxlength="100" requiredMessage="Informe o valor do titulo">
+						<f:convertNumber for="tit_valor"/>	
+					</p:inputText> 
+					<p:message for="tit_valor" />
+
+					<h:outputLabel for="tit_baixado" value="Baixado *: "
+						id="labelInativo" />
+						<p:selectBooleanCheckbox id="tit_baixado" value="#{tituloBeanView.objetoSelecionado.tit_baixado}"/>
+					<p:message for="tit_baixado" />
+					
+					<h:outputLabel for="tit_valorbaixa" value="Valor Pago R$ *: "
+						id="labelValorTituloBaixa" />
+					<p:inputText id="tit_valorbaixa" styleClass="" required="true"
+						value="#{tituloBeanView.objetoSelecionado.tit_valorbaixa}"
+						requiredMessage="Informe o valor pago pelo titulo">
+						<f:convertNumber for="tit_valorbaixa"/>	
+					</p:inputText> 
+					<p:message for="tit_valorbaixa" />
+					
+					<h:outputLabel for="ent_codigoabertura" value="Responsavel:" id="labelent_codigoabertura" />
+					<p:inputText disabled="true" id="ent_codigoabertura" styleClass=""
+						value="#{tituloBeanView.objetoSelecionado.ent_codigoabertura.ent_nomefantasia}" />
+					<h:outputLabel />
+				</h:panelGrid>
+			</p:panel>
+
+			<util:botoesCrud managedBeanView="#{tituloBeanView}"
+				botaoNovo="#{contextoBean.possuiAcesso('TITULO_NOVO', 'ADMIN')}"
+				botaoSalvar="#{contextoBean.possuiAcesso('TITULO_NOVO', 'ADMIN') and tituloBeanView.objetoSelecionado.tit_codigo == null}"
+				botaoAtualizar="#{contextoBean.possuiAcesso('TITULO_EDITAR', 'ADMIN') and tituloBeanView.objetoSelecionado.tit_codigo != null}"
+				botaoExcluir="#{contextoBean.possuiAcesso('TITULO_EXCLUIR', 'ADMIN') and tituloBeanView.objetoSelecionado.tit_codigo != null}">
+
+			</util:botoesCrud>
+
+		</h:form>
+
+		<script type="text/javascript" charset="UTF-8">
+			addFocoAoCampo("cidadeNome");
+		</script>
+		<p:dataTable id="tableResult" value="#{tituloBeanView.lista}"
+			var="objeto" rows="5" widgetVar="tableResultD"
+			paginatorPosition="bottom" lazy="true" paginator="true"
+			emptyMessage="Nao existem valores para exibicao.">
+			<ui:include src="/resources/components/colunasDataTableTitulo.xhtml" />
+			<p:column>
+				<center>
+					<f:facet name="header">Excluir</f:facet>
+					<p:commandLink id="excluirPesquisa" ajax="true" immediate="true" update="tableResult"
+						partialSubmit="true" action="#{tituloBeanView.excluir}">
+						<h:graphicImage width="16" height="16" library="img"
+							name="close.png" />
+						<f:setPropertyActionListener value="#{objeto}"
+							target="#{tituloBeanView.objetoSelecionado}" />
+					</p:commandLink>
+				</center>
+			</p:column>
+			<p:column>
+				<center>
+					<f:facet name="header">Editar</f:facet>
+					<p:commandLink id="editarPesquisa" ajax="true" immediate="true" update="tableResult"
+						partialSubmit="true" action="#{tituloBeanView.editar}">
+						<h:graphicImage width="16" height="16" library="img"
+							name="editar.png" />
+						<f:setPropertyActionListener value="#{objeto}"
+							target="#{tituloBeanView.objetoSelecionado}" />
+					</p:commandLink>
+				</center>
+			</p:column>
+		</p:dataTable>
+	</ui:define>
+</ui:composition>
+</html>

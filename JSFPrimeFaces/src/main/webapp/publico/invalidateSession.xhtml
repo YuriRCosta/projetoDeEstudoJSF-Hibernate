@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name="titulo">Projeto</ui:insert></title>
+
+	<h:outputScript name="primefaces.js" library="primefaces" id="jsPrime" />
+	<h:outputScript name="jquery.js" library="primefaces/jquery"
+		id="jsJquery" />
+	<h:outputScript name="jquery-plugins.js" library="primefaces/jquery"
+		id="jsJqueryPlugin" />
+	<h:outputScript name="jquery.cookie.js" library="javascript"
+		id="jsJaqueryCookie" />
+	<h:outputStylesheet name="jquery-ui.css" library="primefaces/jquery/ui"
+		id="jsJqueryUi" />
+	<h:outputStylesheet name="primefaces.css" library="primefaces"
+		id="jdPrimeCss" />
+	<h:outputScript name="jquery.maskMoney.min.js" library="javascript"
+		id="jsMaskMoneySistema" />
+	<h:outputScript name="jquery.maskedinput.js" library="javascript"
+		id="jsMaskInputSistema" />
+	<h:outputScript name="scripty.js" library="javascript"
+		id="jsScriptSistema" />
+	<h:outputStylesheet name="invalidatePage.css" library="css" />
+	<h:outputScript name="script.js" library="javascript" />
+
+</h:head>
+<h:form prependId="false" id="form">
+	<h:body>
+		<script type="text/javascript" charset="UTF-8">
+			$.noConflict();
+		</script>
+		<!-- <h:form prependId="false" id="form">
+		<div class="alert warning-alert">
+			<h3>Login ou senha incorreto.</h3>
+			<a class="close">&times;</a>
+		</div>
+		<div id="msgError" class="espacoMensagem">
+			<p:growl id="msg" showDetail="false" sticky="true" redisplay="true" autoUpdate="true" life="500"/>
+		</div> -->
+		<div class="alert warning-alert">
+			<h3>Login ou senha incorreto.</h3>
+			<a class="close" onclick="close()">&times;</a>
+		</div>
+
+
+		<div class="container">
+			<h:panelGrid styleClass="formLogin">
+				<h1>Encerrar Sessao</h1>
+
+				<h:outputLabel for="username" value="Usuario:" />
+				<p:inputText required="true" name="username" styleClass="campoLogin"
+					id="username" value="#{loginBeanView.username}" />
+
+				<h:outputLabel for="password" value="Senha:" />
+				<p:password required="true" name="password" id="password"
+					value="#{loginBeanView.password}" />
+
+
+				<p:commandButton oncomplete="handlerLoginRequest(xhr, status, args)"
+					ajax="true" styleClass="ui-button-danger" id="buttonLogin"
+					value="Encerrar" actionListener="#{loginBeanView.invalidar}" />
+
+			</h:panelGrid>
+		</div>
+
+		<script>
+	function msg() {
+		document.querySelector('.alert').classList.add("active");
+	}
+
+	$(".close").click(function() {
+		document.querySelector('.alert').classList.remove("active");
+	});
+
+	function handlerLoginRequest(xhr, status, args) {
+		if (!args.loggedIn) {
+			msg();
+		} else {
+			document.location = '#{request.contextPath}' + '/j_spring_security_logout';
+		}
+
+	}
+</script>
+	</h:body>
+</h:form>
+
+</html>
